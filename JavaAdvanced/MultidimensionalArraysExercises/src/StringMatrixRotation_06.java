@@ -37,12 +37,20 @@ public class StringMatrixRotation_06 {
 
         //printMatrix(matrix);
 
+
+        while (degree >= 360) {
+            degree = degree % 360;
+        }
+
+
         if (degree % 360 == 0 || degree == 0) {
             printMatrix(matrix);
         } else if (degree % 270 == 0) {
             String[][] rotatedMatrix = rotateMatrix270Degrees(matrix);
+            printMatrix(rotatedMatrix);
         } else if (degree % 180 == 0) {
             String[][] rotatedMatrix = rotateMatrix180Degrees(matrix);
+            printMatrix(rotatedMatrix);
         } else {
             String[][] rotatedMatrix = rotateMatrix90Degrees(matrix);
             printMatrix(rotatedMatrix);
@@ -56,29 +64,33 @@ public class StringMatrixRotation_06 {
 
         for (int row = 0; row < matrix.length; row++) {
             for (int col = 0; col < matrix[0].length; col++) {
-
                 rotatedMatrix[col][matrix.length - 1 - row] = matrix[row][col];
-
-
             }
         }
-
         return rotatedMatrix;
-
     }
 
     private static String[][] rotateMatrix180Degrees(String[][] matrix) {
-        return new String[0][];
+        int rows = matrix.length;
+        int cols = matrix[0].length;
+        String[][] rotatedMatrix = new String[rows][cols];
+
+        for (int row = 0; row < matrix.length; row++) {
+            for (int col = 0; col < matrix[0].length; col++) {
+                rotatedMatrix[rotatedMatrix.length - 1 - row][rotatedMatrix[0].length - 1 - col] = matrix[row][col];
+            }
+        }
+        return rotatedMatrix;
     }
 
     private static String[][] rotateMatrix270Degrees(String[][] matrix) {
         int rows = matrix[0].length;
         int cols = matrix.length;
-        String[][] rotatedMatrix = new String[cols][rows];
+        String[][] rotatedMatrix = new String[rows][cols];
 
-        for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[0].length; j++) {
-
+        for (int row = 0; row < matrix.length; row++) {
+            for (int col = 0; col < matrix[0].length; col++) {
+                rotatedMatrix[rotatedMatrix.length - 1 - col][row] = matrix[row][col];
             }
         }
 
