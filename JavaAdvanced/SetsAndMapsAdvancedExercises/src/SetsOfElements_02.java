@@ -31,6 +31,8 @@ public class SetsOfElements_02 {
             }
         }
 
+        //firstSet.retainAll(secondSet);
+
         duplicateElements.forEach(e -> System.out.print(e + " "));
 
 
