@@ -31,21 +31,18 @@ public class UserLogs_09 {
 
 
         data.keySet().forEach(username -> {
-            System.out.printf("%s:%n", username);
+            System.out.printf("%s: %n", username);
             Map<String, Integer> ips = data.get(username);
-            ips.entrySet().forEach(entry -> {
-                int countIps = ips.size();
+
+            int countIps = ips.size();
+            for (Map.Entry<String, Integer> entry : ips.entrySet()) {
                 if (countIps > 1) {
-                    System.out.println(entry.getKey() + " => " + entry.getValue() + ",");
-                    countIps-=1;
-                }else {
-                    System.out.println(entry.getKey() + " => " + entry.getValue() + ".");
+                    System.out.print(entry.getKey() + " => " + entry.getValue() + ", ");
+                    countIps--;
+                } else {
+                    System.out.println(entry.getKey() + " => " + entry.getValue() + ". ");
                 }
-            });
-
-
+            }
         });
-
-
     }
 }
