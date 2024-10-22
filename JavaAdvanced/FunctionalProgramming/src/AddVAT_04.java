@@ -15,6 +15,7 @@ public class AddVAT_04 {
         UnaryOperator<Double> addVat = e -> e * 1.2;
         Consumer<Double> printer = e -> System.out.printf("%.2f%n", e);
 
+        System.out.println("Prices with VAT:");
         Arrays.stream(prices)
                 .map(parseToDouble)
                 .map(addVat)
