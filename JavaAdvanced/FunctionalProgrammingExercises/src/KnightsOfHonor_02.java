@@ -18,7 +18,5 @@ public class KnightsOfHonor_02 {
 
         // 2
         Arrays.stream(names).forEach(printName);
-
-
     }
 }
