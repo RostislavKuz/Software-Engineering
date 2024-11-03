@@ -27,10 +27,10 @@ public class AppliedArithmetics_05 {
                     numbers = add.apply(numbers);
                     break;
                 case "multiply":
-                    multiply.apply(numbers);
+                    numbers = multiply.apply(numbers);
                     break;
                 case "subtract":
-                    subtract.apply(numbers);
+                    numbers = subtract.apply(numbers);
                     break;
                 case "print":
                     printer.accept(numbers);

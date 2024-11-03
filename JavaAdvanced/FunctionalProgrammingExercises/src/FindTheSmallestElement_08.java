@@ -15,8 +15,9 @@ public class FindTheSmallestElement_08 {
                 .collect(Collectors.toList());
 
         // 1
-        Function<List<Integer>, Integer> getIndexOfMinElement = list -> list.lastIndexOf(Collections.min(list));
+        /*Function<List<Integer>, Integer> getIndexOfMinElement = list -> list.lastIndexOf(Collections.min(list));
         System.out.println(getIndexOfMinElement.apply(numbers));
+         */
 
         // 2
         Consumer<List<Integer>> printIndexOfMinElement = list -> System.out.println(list.lastIndexOf(Collections.min(list)));
