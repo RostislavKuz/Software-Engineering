@@ -18,7 +18,12 @@ public class Dog {
         this.name = name;
     }
 
-    public void bark(){
+    public void bark() {
         System.out.println("Bark bark");
     }
+
+    public String toString() {
+        return String.format("My dog is called %s and is %d years old", name, age);
+    }
+
 }
