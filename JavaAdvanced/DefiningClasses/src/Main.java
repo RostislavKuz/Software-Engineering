@@ -1,14 +1,22 @@
-import java.util.Scanner;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Dog dog = new Dog("Georgi");
+        Dog dog2 = new Dog("Atanas", 6);
 
-        Dog dog = new Dog();
+
         dog.setName("Robert");
-        int dogAge = dog.getAge();
+        dog.setAge(12);
+        Map<String, Dog> myDogs = new HashMap<>();
 
-        System.out.println(dog.getAge()f);
+        myDogs.put("My best dog", dog);
+
+        System.out.println(dog.hashCode());
+
+
+        //2:16
 
     }
 }

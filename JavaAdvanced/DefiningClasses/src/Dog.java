@@ -1,6 +1,24 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public class Dog {
     private String name;
     private int age;
+    public String breed;
+
+    public Dog(String name) {
+        this.name = name;
+    }
+
+    public Dog(String name, int age) {
+        this(name);
+        this.age = age;
+    }
+
+    public Dog(String name, int age, String breed) {
+        this(name, age);
+        this.breed = breed;
+    }
 
     public void setAge(int age) {
         this.age = age;
