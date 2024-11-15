@@ -2,7 +2,7 @@ package BankAccount;
 
 public class BankAccount {
     private static double interestRate = 0.02;
-    private int accountsCount = 0;
+    private static int accountsCount = 0;
     private int id;
     private double balance;
 
@@ -36,9 +36,11 @@ public class BankAccount {
         BankAccount.interestRate = interestRate;
     }
 
-    public void deposit(double money){
+    public void deposit(double money) {
+        this.balance += money;
+    }
 
-        // 2:47
-
+    public double getInterest(int years) {
+        return years * interestRate * this.balance;
     }
 }
