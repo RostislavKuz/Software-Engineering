@@ -1,4 +1,4 @@
-package OpinionPoll;
+package OpinionPoll_01;
 
 public class Person {
     private String name;

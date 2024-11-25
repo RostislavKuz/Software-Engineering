@@ -1,4 +1,4 @@
-package OpinionPoll;
+package OpinionPoll_01;
 
 import java.util.*;
 import java.util.stream.Collectors;
