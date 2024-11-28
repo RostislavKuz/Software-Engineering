@@ -8,4 +8,9 @@ public class Car {
         this.carModel = carModel;
         this.carSpeed = carSpeed;
     }
+
+    @Override
+    public String toString() {
+        return carModel + " " + carSpeed;
+    }
 }
