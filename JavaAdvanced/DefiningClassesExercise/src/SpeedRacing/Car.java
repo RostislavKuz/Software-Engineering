@@ -1,5 +1,7 @@
 package SpeedRacing;
 
+import java.util.Map;
+
 public class Car {
     private String carModel;
     private double fuelAmount;
@@ -21,4 +23,33 @@ public class Car {
     public void setDistanceTraveled(int distanceTraveled) {
         this.distanceTraveled = distanceTraveled;
     }
+
+    public String getCarModel() {
+        return carModel;
+    }
+
+    public double getFuelAmount() {
+        return fuelAmount;
+    }
+
+    public double getFuelCostFor1Kilometer() {
+        return fuelCostFor1Kilometer;
+    }
+
+    public void setFuelAmount(double fuelAmount) {
+        this.fuelAmount = fuelAmount;
+    }
+
+
+    public void isEnoughFuel(int amountOfKm) {
+        double needFuel = fuelCostFor1Kilometer * amountOfKm;
+        if (fuelAmount >= needFuel) {
+            fuelAmount -= needFuel;
+            distanceTraveled += amountOfKm;
+        } else {
+            System.out.println("Insufficient fuel for the drive");
+        }
+
+    }
+
 }
