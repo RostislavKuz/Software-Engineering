@@ -1,5 +1,7 @@
 package smartArray;
 
+import java.util.function.Consumer;
+
 public class SmartArray {
     public static final int INITIAL_CAPACITY = 4;
     public static final int INITIAL_SIZE = 0;
@@ -100,6 +102,14 @@ public class SmartArray {
             this.resize();
         }
     }
+
+    public void foreach(Consumer<Integer> consumer) {
+        for (int i = 0; i < this.size; i++) {
+            consumer.accept(this.data[i]);
+        }
+    }
+
+
 
 
 }
