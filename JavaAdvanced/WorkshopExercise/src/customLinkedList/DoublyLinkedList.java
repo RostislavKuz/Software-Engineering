@@ -1,5 +1,9 @@
 package customLinkedList;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.function.Consumer;
+
 public class DoublyLinkedList {
     private Node head;
     private Node tail;
@@ -65,6 +69,37 @@ public class DoublyLinkedList {
             this.size--;
         }
         return removedElement;
+    }
+
+    public int removeLast() {
+        int removedElement;
+        if (isEmpty()) {
+            throw new IllegalStateException("Error while remove element from empty list!");
+        } else if (this.size == 1) {
+            removedElement = this.tail.currentValue;
+            this.head = this.tail = null;
+            size--;
+        } else {
+            removedElement = this.tail.currentValue;
+            this.tail = this.tail.prev;
+            this.tail.next = null;
+            this.size--;
+        }
+        return removedElement;
+    }
+
+    public void forEach(Consumer<Integer> consumer) {
+        Node currentNode = this.head;
+        while (currentNode != null) {
+            consumer.accept(currentNode.currentValue);
+            currentNode = currentNode.next;
+        }
+    }
+
+    public int[] toArray() {
+        List<Integer> resultList = new ArrayList<>();
+        forEach(el -> resultList.add(el));
+        return resultList.stream().mapToInt(e -> e).toArray();
     }
 
     private void checkValidIndex(int index) {
