@@ -9,7 +9,7 @@ public class Aquarium {
     private int size;
     private List<Fish> fishInPool;
 
-    public Aquarium(String name, int capacity, int size, List<Fish> fishInPool) {
+    public Aquarium(String name, int capacity, int size) {
         this.name = name;
         this.capacity = capacity;
         this.size = size;
@@ -57,5 +57,24 @@ public class Aquarium {
             fishInPool.remove(removedFish);
             return true;
         }
+    }
+
+    public Fish findFish(String name) {
+        for (Fish fish : fishInPool) {
+            if (fish.getName().equals(name)) {
+                return fish;
+            }
+        }
+        return null;
+    }
+
+    public String report() {
+        StringBuilder builder = new StringBuilder();
+        builder.append(String.format("Aquarium: %s ^ Size: %d", name, size)).append("\n");
+        for (Fish fish : fishInPool) {
+            builder.append(fish.toString()).append(System.lineSeparator());
+        }
+        return builder.toString();
+
     }
 }
