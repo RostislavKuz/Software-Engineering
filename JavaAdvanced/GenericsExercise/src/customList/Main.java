@@ -41,6 +41,9 @@ public class Main {
                 case "Print":
                     customList.print();
                     break;
+                case "Sort":
+                    customList.sort();
+                    break;
             }
             command = scanner.nextLine();
         }

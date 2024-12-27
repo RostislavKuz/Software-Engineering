@@ -1,6 +1,7 @@
 package customList;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class CustomList<T extends Comparable<T>> {
@@ -61,10 +62,13 @@ public class CustomList<T extends Comparable<T>> {
                 .get();
     }
 
-    public void print(){
+    public void print() {
         for (T element : this.elements) {
             System.out.println(element);
         }
+    }
 
+    public void sort() {
+        this.elements.sort((e1, e2) -> e1.compareTo(e2));
     }
 }
