@@ -31,15 +31,15 @@ public class Main {
                         Player player = new Player(playerName, endurance, sprint, dribble, passing, shooting);
                         teams.get(teamName).addPlayer(player);
                     } else {
-                        throw new IllegalArgumentException("Team" + teamName + "does not exist.");
+                        throw new IllegalArgumentException("Team " + teamName + " does not exist.");
                     }
                 } else if (commandType.equals("Remove")) {
                     teams.get(teamName).removePlayer(tokens[2]);
                 } else if (commandType.equals("Rating")) {
                     if (!teams.containsKey(teamName)) {
-                        throw new IllegalArgumentException("Team" + teamName + "does not exist.");
+                        throw new IllegalArgumentException("Team " + teamName + " does not exist.");
                     }
-                    System.out.printf("%s - %.0f", teamName, teams.get(teamName).getRating());
+                    System.out.printf("%s - %.0f%n", teamName, teams.get(teamName).getRating());
 
                 }
             } catch (IllegalArgumentException exception) {
